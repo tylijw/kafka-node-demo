@@ -1,0 +1,34 @@
+{
+  "name": "kafka-node-demo",
+  "version": "1.0.0",
+  "description": "kafka node demo",
+  "main": "www\\bin",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlisliu/kafka-node-demo.git"
+  },
+  "keywords": [
+    "kafka",
+    "mq",
+    "node"
+  ],
+  "author": "Carlis Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlisliu/kafka-node-demo/issues"
+  },
+  "homepage": "https://github.com/carlisliu/kafka-node-demo#readme",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
