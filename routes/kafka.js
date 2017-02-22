@@ -3,10 +3,11 @@ var router = express.Router();
 var kafka = require('kafka-node');
 var Producer = kafka.Producer;
 var client = new kafka.Client();
+//client.on('error', function(error){console.log(error);})
 
 router.get('/', function(req, res, next) {
     var producer = new Producer(client);
-    var km = new KeyedMessage('key', 'message')
+    var km = new kafka.KeyedMessage('key', 'message')
     var payloads = [{
         topic: 'topic1',
         messages: 'hi',
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
             });
         });
     });
+   // producer.on('error', function(error) { console.log(error);});
 });
 
 module.exports = router;
