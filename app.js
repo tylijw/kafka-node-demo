@@ -7,7 +7,10 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var kafka1 = require('./routes/kafka1');
+//var kafka1 = require('./routes/kafka');
+var kafka2 = require('./routes/createTopic'); 
+var kafka3 = require('./routes/createTopicAsync');
+var kafka4 = require('./routes/highLevelP');
 var app = express();
 
 // view engine setup
@@ -25,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/kafka', require('./routes/kafka'));
-app.use('/kafka1',kafka1);
+//app.use('/kafka1',kafka1);
+app.use('/createTopic',kafka2);
+app.use('/createTopicAsync',kafka3);
+app.use('/highLevelP',kafka4);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
