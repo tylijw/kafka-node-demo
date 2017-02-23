@@ -21,18 +21,10 @@ var client = new kafka.Client('10.194.1.2:2181');
             	console.log(data);
             	res.render('index', {
             	title: 'Express Kafka'
-            });
-
-
-}); 
-
-
-
-});
-
-	
-});	
-	
+				});
+			}); 
+		});
+	});	
 });
 
 module.exports = router;
