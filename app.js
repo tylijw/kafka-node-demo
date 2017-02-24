@@ -30,12 +30,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/kafka', require('./routes/kafka'));
+
 //app.use('/kafka1',kafka1);
 app.use('/createTopic',kafka2);
 app.use('/createTopicAsync',kafka3);
 app.use('/highLevelP',kafka4);
 app.use('/highCreateTopic',kafka5);
 app.use('/highCreateTopicAsync',kafka6);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
