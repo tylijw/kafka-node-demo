@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 //var kafka1 = require('./routes/kafka');
-var kafka2 = require('./routes/createTopic'); 
+var kafka2 = require('./routes/createTopic');
 var kafka3 = require('./routes/createTopicAsync');
 var kafka4 = require('./routes/highLevelP');
 var kafka5 = require('./routes/highCreateTopic');
@@ -23,7 +23,9 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -32,17 +34,17 @@ app.use('/users', users);
 app.use('/kafka', require('./routes/kafka'));
 
 //app.use('/kafka1',kafka1);
-app.use('/createTopic',kafka2);
-app.use('/createTopicAsync',kafka3);
-app.use('/highLevelP',kafka4);
-app.use('/highCreateTopic',kafka5);
-app.use('/highCreateTopicAsync',kafka6);
+app.use('/createTopic', kafka2);
+app.use('/createTopicAsync', kafka3);
+app.use('/highLevelP', kafka4);
+app.use('/highCreateTopic', kafka5);
+app.use('/highCreateTopicAsync', kafka6);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -50,23 +52,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
