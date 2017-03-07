@@ -1,8 +1,8 @@
-
-var kafka =require('kafka-node');
+var kafka = require('kafka-node');
 var Consumer = kafka.Consumer;
-var Client = kafka.Client; 
+var Client = kafka.Client;
 var client = new Client('localhost:2181')
+
 
 // var argv = {  
     // topic: "thaync"  
