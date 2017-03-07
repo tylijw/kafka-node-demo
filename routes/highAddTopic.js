@@ -7,12 +7,9 @@ var client = new kafka.Client('10.194.1.2:2181');
     var producer = new HighLevelProducer(client);
     var km = new kafka.KeyedMessage('key', 'message')
     var payloads = [{
-        topic: 't5',
+        topic: 'topic-test',
         messages: 'high',
-        partition: 0
-    }, {
-        topic: 't6',
-        messages: ['hello', 'world', km]
+        partition: 1
     }];
     producer.on('ready', function() {
         producer.send(payloads, function(err, data) {

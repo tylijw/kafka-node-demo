@@ -8,7 +8,7 @@ var Producer = kafka.Producer;
 router.get('/', function(req, res, next) {
 var client = new kafka.Client('10.194.1.2:2181');
     var producer = new Producer(client);
-    var km = new kafka.KeyedMessage('key', 'message')
+    var km = new kafka.KeyedMessage('key', 'message');
     var payloads = [{
         topic: 'topic1',
         messages: 'hi',

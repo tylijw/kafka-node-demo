@@ -2,7 +2,7 @@ var kafka =require('kafka-node');
 var Consumer = kafka.Consumer;
 var Client = kafka.Client; 
 var client = new Client('10.194.1.2:2181');
-consumer = new Consumer(
+var consumer = new Consumer(
         client,
         [
             { topic: 't5' }, { topic: 't6'}
